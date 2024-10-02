@@ -4,6 +4,12 @@ body {
   margin: 0;
 }
 
+body, html {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
 .conatiner {
   width: 900px;
 
