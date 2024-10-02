@@ -7,11 +7,20 @@ body {
 .conatiner {
   width: 900px;
 
+
+
   max-width: 90vw;
   margin: auto;
   text-align: center;
   padding-top: 10px;
   transition: transform 0.65s;
+}
+
+
+header h1{
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-right:-170px;
 }
 
 svg {
@@ -22,9 +31,32 @@ svg {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Ensures space between the three sections */
+
   padding: 20px 0;
 }
+
+.center-header1{
+  width:100%;
+  display:none;
+  font-size: 20px;
+
+  margin-bottom: 0;
+  margin-top: 0;
+text-align:center;
+}
+
+.center-header {
+  flex: 1; /* Takes up all available space to center the h1 */
+  text-align: center;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 0px; /* Adds some space between the mail and cart */
+}
+
 
 header .icon-cart {
   position: relative;
@@ -45,9 +77,9 @@ header .icon-cart span {
   right: -12px;
 }
 
-.title {
-  position: relative;
-  left: 20px;
+header .title {
+  position: absolute;
+  left: 20px; /* Keep it on the far left */
 }
 
 .listProduct .item img {
@@ -183,6 +215,11 @@ body.showCart .container {
   .listProduct {
     grid-template-columns: repeat(2, 1fr);
   }
+  header h1{
+ margin-left:-40px !important;
+
+    font-size: 25px;
+  }
 }
 
 .checkout {
@@ -296,7 +333,13 @@ body.modal-open .overlay {
 }
 
 @media (max-width: 470px) {
-
+.center-header1{
+    display:block;
+   
+       }
+       header .center-header{
+        display:none;
+           }
 
   .listProduct {
     grid-template-columns: repeat(1, 1fr);
@@ -310,6 +353,11 @@ body.modal-open .overlay {
 
 
 @media (max-width: 390px) {
+
   .cartTab {
     width: 100vw;
   }}
+
+  header .svg-icon {
+    margin-right: 20px; /* Add spacing between the mail and cart icons */
+  }
