@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.conatiner {
+  width: 900px;
+
+  max-width: 90vw;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+  transition: transform 0.65s;
+}
+
+svg {
+  width: 40px;
+  height: 40px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+header .icon-cart {
+  position: relative;
+  right: 20px;
+}
+
+header .icon-cart span {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: -12px;
+}
+
+.title {
+  position: relative;
+  left: 20px;
+}
+
+.listProduct .item img {
+  width: 100%; /* Ensures the image takes up the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image is contained within the element */
+}
+
+.listProduct {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  gap: 20px;
+  position: relative;
+}
+
+.listProduct .item {
+  background-color: #eeeeee;
+  padding: 50px;
+  border-radius: 20px;
+}
+.listProduct .item h2 {
+  font-weight: 500;
+  font-size: large;
+}
+
+.listProduct .item .price {
+  letter-spacing: 4px;
+  font-size: small;
+}
+
+.listProduct .item button {
+  background-color: #353432;
+  color: #eee;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+.cartTab {
+  width: 400px;
+  background-color: #353432;
+  color: #eee;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  transition: 0.65s;
+}
+body.showCart .cartTab {
+  right: 0;
+}
+body.showCart .container {
+  transform: translateX(-250px);
+}
+
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.cartTab .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button {
+    color: black;
+  background-color: #eabc0e;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cartTab .btn .close {
+    color: black;
+  background-color: #eee;
+}
+
+.cartTab .listCart .item img {
+  width: 100%;
+}
+
+.cartTab .listCart .item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.listCart .quantity span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.listCart .quantity span:nth-child(2) {
+  background-color: transparent;
+  color: #eee;
+}
+
+.listCart .item:nth-child(2) {
+  background-color: #555;
+}
+
+.listCart {
+  overflow: auto;
+}
+
+.listCart::-webkit-scrollbar {
+  width: 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .listProduct {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .listProduct {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.checkout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: scroll;
+  background-color: #555;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90vw;
+  max-width: 500px;
+  max-height: 600px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.checkout .checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.checkout .checkout-header h2 {
+  color: #fff; /* White text for better contrast */
+  margin: 0;
+  font-size: 24px;
+}
+
+.checkout .close-checkout {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #fff; /* White text for better contrast */
+  cursor: pointer;
+}
+
+.checkout .checkout-list {
+  background-color: #666; /* Slightly lighter gray background for the list */
+  padding: 15px;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 300px; /* Limit height and make scrollable if too many items */
+}
+
+.checkout .checkout-list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #fff; /* White text for the items */
+}
+
+.checkout .checkout-list .item .image {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.checkout .checkout-list .item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkout .checkout-list .item .name {
+  font-size: 16px;
+  flex: 1;
+  margin-left: 15px;
+}
+
+.checkout .checkout-list .item .totalPrice {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.checkout .total-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff; /* White text for total price */
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* Overlay that covers the page and fades the background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 999; /* Just below the checkout modal */
+  display: none; /* Initially hidden */
+}
+
+/* Fading background when checkout is active */
+body.modal-open {
+  pointer-events: none; /* Disable interaction with the rest of the page */
+  overflow: hidden; /* Disable scrolling */
+}
+
+/* Allow interaction only with the checkout */
+body.modal-open .checkout,
+body.modal-open .overlay {
+  pointer-events: auto;
+}
+
+@media (max-width: 470px) {
+
+
+  .listProduct {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.checkOut:disabled {
+  background-color: #b18e0b; /* Disabled color */
+  cursor: not-allowed; /* Change cursor when disabled */
+}
+
+
+@media (max-width: 390px) {
+  .cartTab {
+    width: 100vw;
+  }}

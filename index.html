@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Home Page</title>
+   
+</head>
+<body>
+   <div class="container">
+        <header>
+            <div class="title">PRODUCT LIST</div>
+            <div class="icon-cart">
+                <svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                <span>0</span>
+            </div>
+        </header>
+
+        <!-- Product List -->
+        <div class="listProduct">
+            <!-- Products will be dynamically populated here -->
+        </div>
+    </div>
+
+    <!-- Shopping Cart Tab -->
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            <!-- Cart items will be dynamically populated here -->
+        </div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut" disabled >Check Out</button>
+        </div>
+    </div>
+
+    <!-- Checkout Container -->
+    <div class="overlay"></div>
+    <div class="checkout" style="display: none;">
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+            <button class="close-checkout">Close</button>
+        </div>
+        <div class="checkout-list"></div>
+        <div class="total-price"></div>
+        <div class="paypal-button-container"></div> <!-- Add a separate container for the PayPal button -->
+        
+    </div>
+    
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AQEnsYMrRx4wuYsH0A6HUpRjekgry6tupF5cEYtFEzl3sxmgOQclyBNWrNjDocbZxYchNysH-JrMnr2b"></script>
+    <script src="home.js"></script>
+    
+   
+</body>
+</html>
