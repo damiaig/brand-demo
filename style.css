@@ -3,16 +3,13 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
 }
-
 body, html {
   font-family: "Poppins", sans-serif;
   margin: 0;
   overflow-x: hidden; /* Prevents horizontal overflow */
 }
-
 .conatiner {
   width: 900px;
-
 
 
   max-width: 90vw;
@@ -46,7 +43,7 @@ header {
   width:100%;
   display:none;
   font-size: 20px;
-
+  overflow: hidden;
   margin-bottom: 0;
   margin-top: 0;
 text-align:center;
@@ -113,8 +110,8 @@ header .title {
 }
 
 .listProduct .item .price {
-  letter-spacing: 4px;
-  font-size: small;
+  letter-spacing: 1px;
+  font-size: medium;
 }
 
 .listProduct .item button {
@@ -132,7 +129,7 @@ header .title {
   color: #eee;
   position: fixed;
   top: 0;
-  right: -400px;
+  right: -500px;
   bottom: 0;
   display: grid;
   grid-template-rows: 70px 1fr 70px;
