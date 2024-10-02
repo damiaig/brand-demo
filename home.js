@@ -420,3 +420,7 @@ function processPayment(product) {
     console.error("Error during payment processing:", error)
   }
 }
+
+document.querySelector(".mail").addEventListener("click", function() {
+  window.location.href = "mailto:damilolaaig@gmail.com";
+});
