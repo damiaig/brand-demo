@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <title>Home Page</title>
-   
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
    <div class="container">
@@ -49,22 +49,22 @@
     </div>
 
     <!-- Checkout Container -->
-    <div class="overlay"></div>
+    <div class="overlay"></div> 
     <div class="checkout" style="display: none;">
         <div class="checkout-header">
             <h2>Checkout</h2>
             <button class="close-checkout">Close</button>
         </div>
         <div class="checkout-list"></div>
-        <div class="total-price"></div>
-        <div class="paypal-button-container"></div> <!-- Add a separate container for the PayPal button -->
+        <div class="total-price" ></div>
+        
+       
+        <button class="paystack">Pay with Paystack</button>
         
     </div>
-    
-    </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=AQEnsYMrRx4wuYsH0A6HUpRjekgry6tupF5cEYtFEzl3sxmgOQclyBNWrNjDocbZxYchNysH-JrMnr2b"></script>
+
+   
     <script src="home.js"></script>
-    
    
 </body>
 </html>
