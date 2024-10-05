@@ -358,7 +358,7 @@ body.modal-open .overlay {
 @media (max-width: 390px) {
 
   .cartTab {
-    width: 100vw;
+    width: 90vw;
   }}
 
   header .svg-icon {
