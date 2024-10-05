@@ -288,6 +288,13 @@ function showCheckout() {
   let totalElement = document.createElement("div");
   totalElement.className = "total";
   totalElement.innerHTML = `Total: ₦${totalPrice.toFixed(2)}`;
+  
+  // Adding inline styles
+  totalElement.style.color = "white";
+  totalElement.style.fontSize = "15px";
+  totalElement.style.fontWeight = "600";
+  
+  // Append the styled element to the checkout list
   checkoutList.appendChild(totalElement);
 }
 
