@@ -364,3 +364,38 @@ body.modal-open .overlay {
   header .svg-icon {
     margin-right: 20px; /* Add spacing between the mail and cart icons */
   }
+
+.totalPrice {
+
+    font-size: 15px;
+margin-left: -15px;
+    color: #eee;
+  }
+
+  .total-price{
+
+    font-size: 15px;
+
+    color: white;
+  }
+
+  .paystack {
+    width: 50%;
+    color:#555 ;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 700;
+    margin-left: 25%;
+    border-radius: 10px;
+    border: 0px;
+    cursor: pointer;
+    background-color: #fff; /* No background by default */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.paystack:hover {
+    background-color: #eabc0e; /* Background becomes the current text color */
+     /* Darker shade for text on hover */
+  
+}
+
