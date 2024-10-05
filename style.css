@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-}
 body, html {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -325,8 +321,11 @@ body.showCart .container {
 
 /* Fading background when checkout is active */
 body.modal-open {
-  pointer-events: none; /* Disable interaction with the rest of the page */
   overflow: hidden; /* Disable scrolling */
+}
+
+body.modal-open .other-elements {
+  pointer-events: none; /* Disable interaction for all other elements as needed */
 }
 
 /* Allow interaction only with the checkout */
@@ -334,7 +333,6 @@ body.modal-open .checkout,
 body.modal-open .overlay {
   pointer-events: auto;
 }
-
 @media (max-width: 470px) {
 .center-header1{
     display:block;
