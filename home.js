@@ -23,21 +23,76 @@ closeCart.addEventListener("click", () => {
   body.classList.toggle("showCart");
 });
 
-// Function to display products on the page
-const addDataToHTML = () => {
-  listProductHTML.innerHTML = "";
+
+const translations = {
+  en: {
+    title: "PRODUCT LIST",
+    "shopping-cart": "Shopping Cart",
+    close: "CLOSE",
+    checkout: "Check Out",
+    "pay-with-paystack": "Pay with Paystack",
+    "add-to-cart": "Add To Cart"
+  },
+  fr: {
+    title: "LISTE DE PRODUITS",
+    "shopping-cart": "Panier",
+    close: "FERMER",
+    checkout: "Passer à la caisse",
+    "pay-with-paystack": "Payer avec Paystack",
+    "add-to-cart": "Ajouter au Panier"
+  },
+  es: {
+    title: "LISTA DE PRODUCTOS",
+    "shopping-cart": "Carrito de Compras",
+    close: "CERRAR",
+    checkout: "Pagar",
+    "pay-with-paystack": "Pagar con Paystack",
+    "add-to-cart": "Añadir al Carrito"
+  }
+};
+
+// Function to apply translations for static content
+function applyTranslation(lang) {
+  document.querySelectorAll('[data-text]').forEach(el => {
+    const key = el.getAttribute('data-text');
+    el.textContent = translations[lang][key];
+  });
+}
+
+// Modal functionality
+const modal = document.getElementById("languageModal");
+modal.style.display = "block"; // Show modal on page load
+
+// Event listener for language selection
+document.querySelectorAll('.modal-button').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const selectedLang = e.target.getAttribute('data-lang');
+    applyTranslation(selectedLang); // Apply static content translation
+    updateLanguage(selectedLang);   // Update product list and button text
+    modal.style.display = "none";   // Close modal after selection
+  });
+});
+
+
+const addDataToHTML = (lang = "en") => {
+  const listProductHTML = document.querySelector('.listProduct');
+  listProductHTML.innerHTML = ""; // Clear the product list
+
   if (listProducts.length > 0) {
     listProducts.forEach((product) => {
       let newProduct = document.createElement("div");
       newProduct.dataset.id = product.id;
       newProduct.classList.add("item");
 
+      // Get translation for "Add to Cart" button based on the selected language
+      const addToCartText = translations[lang]["add-to-cart"];
+
       // Initial HTML for the product
       newProduct.innerHTML = `
-                <img class="product-img" src="${product.image}" alt="${product.name}">
-                <h2>${product.name}</h2>
-                <div class="price">₦${product.price}</div>
-                <button class="addCart">Add To Cart</button>`;
+        <img class="product-img" src="${product.image}" alt="${product.name}">
+        <h2>${product.name}</h2>
+        <div class="price">₦${product.price}</div>
+        <button class="addCart">${addToCartText}</button>`; // Use the translated text
 
       listProductHTML.appendChild(newProduct);
 
@@ -55,6 +110,10 @@ const addDataToHTML = () => {
   }
 };
 
+// Function to re-render the products with the selected language
+function updateLanguage(lang) {
+  addDataToHTML(lang); // Re-render product list with translated "Add to Cart" button
+}
 // Event listener for Add to Cart button
 listProductHTML.addEventListener("click", (event) => {
   let clickedElement = event.target;
