@@ -334,13 +334,7 @@ body.modal-open .overlay {
   pointer-events: auto;
 }
 @media (max-width: 470px) {
-.center-header1{
-    display:block;
-   
-       }
-       header .center-header{
-        display:none;
-           }
+
 
   .listProduct {
     grid-template-columns: repeat(1, 1fr);
@@ -439,3 +433,21 @@ margin-left: -15px;
    /* Darker shade for text on hover */
 
 }
+
+
+
+@media (max-width: 450px) {
+
+  .title {
+  
+    font-size: 13px;
+  }}
+
+  @media (max-width: 550px) {
+  .center-header1{
+    display:block;
+   
+       }
+       header .center-header{
+        display:none;
+           }}
